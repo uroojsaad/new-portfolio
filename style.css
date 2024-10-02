@@ -241,15 +241,18 @@ Media Queries Section
   }
 
   .homepage-background {
-    height: 65vh;
+    height: 28vh;
   }
 
   /* hero section  */
 
   .section-hero h1 {
     line-height: 1.05;
+    font-size: x-large;
   }
-
+  .section-hero .homepage-background a p {
+    font-size: 16px;
+  }
   /* section bidoata  */
   .section-biodata .grid {
     gap: 3rem;
@@ -290,6 +293,9 @@ Media Queries Section
 
   .section-footer .grid-four-col {
     grid-template-columns: 1fr 1fr;
+  }
+  .bio-image img {
+    display: none;
   }
 
   /* .img-ovelay .overlay {
