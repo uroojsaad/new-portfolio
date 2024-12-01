@@ -7,14 +7,12 @@
 }
 body,
 html {
-  height: 100%; /* Ensure the minimum height is the full viewport */
-  font-family: "PT Sans", sans-serif;
-  font-size: 62.5%;
-  background-color: black;
-  overflow-x: hidden;
+  height: 100% !important; /* Ensure the minimum height is the full viewport */
+  font-family: "PT Sans", sans-serif !important;
+  background-color: black !important;
+  overflow-x: hidden !important;
 }
 
-/* Styling the navigation bar */
 :root {
   --heading: #06ddd3;
   --para: #050505;
@@ -33,7 +31,7 @@ html {
 .container {
   max-width: 140rem;
   margin: 0 auto;
-  padding: 3.2rem;
+  padding: 3.2rem !important;
 }
 
 .grid {
@@ -78,13 +76,16 @@ html {
 }
 /* ########################################################## */
 .homepage-background span {
-  color: #e5e900;
+  background: linear-gradient(to right, #fbff00 0%, #48f6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .homepage-background {
   background-image: url("images/black-neon-bg.png");
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Cover the entire area of the element */
+  font-weight: 700;
   height: 100vh; /* 100% of the viewport height */
   width: 100vw; /* 100% of the viewport width */
   display: flex;
@@ -100,15 +101,17 @@ html {
 h1 {
   display: inline-block;
   color: #fefded;
-  font-size: 9em; /* Adjust font size as needed */
   /* text-shadow: 0.03em 0.03em 0 hsla(230, 40%, 50%, 1); */
   letter-spacing: 5px;
 }
-
+.section-biodata p span {
+  background: linear-gradient(to right, #fbff00 0%, #48f6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 p {
-  /* color: --para #ff0505; */
   letter-spacing: 2px;
-  font-size: 18px;
   font-weight: 500;
   color: #fefded;
 }
@@ -166,204 +169,179 @@ p {
 /* ===========================================
 Media Queries Section
 ======================================= */
-
-@media (max-width: 94em) {
-  .container {
-    max-width: 130rem;
+@media (max-width: 575.98px) {
+  /* Styles for extra small devices */
+  .grid-three-col {
+    grid-template-columns: 100% !important;
   }
-  .navbar-lists {
-    gap: 3.4rem;
-  }
-}
-
-/* for widht below 1200px  */
-@media (max-width: 75em) {
-  .container {
-    max-width: 110rem;
-  }
-  .navbar-lists {
-    gap: 3.4rem;
-  }
-}
-
-/* media queries less then 980px */
-@media (max-width: 980px) {
-  /* to make all the container with same padding  */
-  .container {
-    padding: 3.2rem;
-  }
-
-  html {
-    font-size: 56.25%;
-  }
-
-  /* when we are in 980px we need to show the menu open icon */
-  .mobile-navbar-btn {
-    display: block;
-    z-index: 99999;
-    border: 3px solid #212529;
-    color: #212529;
-  }
-  .navbar-nav li {
-    padding: 20px 0; /* Increased padding for larger touch targets */
-  }
-
-  .header {
-    position: relative;
-  }
-
-  .header .logo {
-    width: 40%;
-    /* height: 3.4rem; */
-  }
-
-  /* .navbar {
-    width: 100%;
-    height: 100vh;
-    background: #e7f5ff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%);
-    transition: all 0.5s linear;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  } */
-
-  .navbar .navbar-lists .navbar-link:link,
-  .navbar .navbar-lists .navbar-link:visited {
-    color: #212529;
-    font-size: 3.2rem;
-  }
-
   .homepage-background {
-    height: 28vh;
+    background-size: contain;
+    height: auto;
+    padding: 0;
+    background-position: top;
+    /* position: relative;
+    filter: blur(1px); */
   }
+  .homepage-background h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+  .homepage-background a p {
+    font-size: 18px;
+    width: 65%;
+    background-color: #0000008f;
+    border-radius: 12px;
+  }
+  .homepage {
+    transform: translateX(12px);
 
-  /* hero section  */
-
-  .section-hero h1 {
-    line-height: 1.05;
-    font-size: x-large;
-  }
-  .section-hero .homepage-background a p {
-    font-size: 16px;
-  }
-  /* section bidoata  */
-  .section-biodata .grid {
-    gap: 3rem;
-  }
-
-  /* section work  */
-  .section-work-data .common-numbers {
-    font-size: 3.2rem;
-  }
-
-  /* services section  */
-
-  .section-services .grid {
-    gap: 6rem;
-  }
-
-  .section-services .grid-three-col {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* resume section  */
-  .section-resume .grid-two-col {
-    grid-template-columns: 1fr;
-  }
-
-  .section-resume .grid-two-col img {
-    width: 50%;
-  }
-  .resume-img {
-    grid-row: 2;
-    transform: translateY(-2rem);
-  }
-
-  /* testimonial section  */
-  .section-testimonial .grid-three-col {
-    grid-template-columns: 2fr;
-  }
-
-  .section-footer .grid-four-col {
-    grid-template-columns: 1fr 1fr;
+    /* z-index: 2;
+    width: 80%;
+    padding: 20px; */
   }
   .bio-image img {
-    display: none;
+    display: none !important;
   }
-
-  /* .img-ovelay .overlay {
-    font-size: 2.8rem;
-  } */
+  .grid-two-col {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 27px;
+  }
+  .button {
+    padding: 5.5px 3.3rem;
+  }
+  .grid {
+    gap: 0rem;
+  }
 }
+/* ###################################################################################################################### */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Styles for small devices */
 
-/* ############################### Below 780px ############################## */
-@media (max-width: 780px) {
-  .container {
-    max-width: 720px;
+  .homepage-background {
+    background-size: contain;
+    /* height: auto;
+    padding: 0; */
+    background-position: top;
   }
-  /* hero section  */
-  .section-hero .grid-two-col {
-    grid-template-columns: 1fr;
+  .homepage-background h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
   }
-
-  .section-hero-data {
-    align-items: center;
+  .homepage-background a p {
+    font-size: 18px;
+    width: 65%;
+    background-color: #0000008f;
+    border-radius: 12px;
   }
-
-  .hero-heading {
-    text-align: center;
+  .grid-two-col {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .hero-para {
-    text-align: center;
-    margin-top: 2rem;
+  .section-biodata {
+    transform: translateY(-186px);
   }
-
-  .section-hero img {
-    width: 70%;
+  .grid {
+    gap: 0rem;
   }
-
-  /* work section  */
-  .section-portfolio .grid-three-col {
+  .section-portfolio {
+    transform: translateY(-243px);
+  }
+  .button {
+    padding: 0.3rem 2rem;
+  }
+  .grid-three-col {
     grid-template-columns: repeat(2, 1fr);
   }
+  .section-freelancer p {
+    font-size: 1.5rem;
+  }
+  .section-services .grid-three-col {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* ############################################################################################################### */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Styles for medium devices */
+  .homepage-background {
+    background-size: contain;
+    background-position: top;
+  }
+  .homepage-background .button {
+    transform: translateY(22px);
+    padding: 0.4rem 3rem;
+  }
+  .section-biodata .grid-two-col {
+    display: block;
+    transform: translateY(-102px);
+  }
+  .section-biodata .bio-data {
+    transform: translateY(-167px);
+  }
+  .section-portfolio {
+    transform: translateY(-171px);
+  }
+  .homepage h1 {
+    font-weight: 700;
+  }
+}
+/* ######################################################################################################################### */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Styles for large devices */
+  .homepage-background {
+    background-size: cover;
+    height: 100vh;
+    padding-left: 30px;
+  }
+  .homepage-background h1 {
+    font-weight: 700;
+  }
+  .section-biodata .grid-two-col {
+    column-gap: normal;
+    row-gap: normal;
+  }
+  .bio-data-stats {
+    width: 205%;
+  }
+  .bio-data {
+    width: 107%;
+  }
+  .section-services .grid {
+    gap: 2rem;
+  }
+}
+/* ########################################################################################################################## */
+@media (min-width: 1200px) {
+  /* Styles for extra large devices */
+  .homepage-background {
+    background-size: cover;
+    height: 100vh;
+    padding-left: 30px;
+  }
+  .homepage-background h1 {
+    font-weight: 700;
+    font-size: 50px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .section-biodata .grid {
+    gap: 0rem;
+  }
+  .bio-data-stats {
+    width: 213%;
+  }
+  .section-services .grid {
+    gap: 4rem;
+  }
 }
 
-/* Below 560px  */
-@media (max-width: 35em) {
-  .header {
-    padding: -1px 3.2rem;
-  }
-
-  .header .logo {
-    width: 60%;
-  }
-
-  /* secion .bio-data */
-
-  .section-biodata .grid-two-col {
-    grid-template-columns: 1fr;
-  }
-
-  .section-biodata .bio-image {
-    grid-row: 2;
-    margin-top: 3.2rem;
-  }
-
-  /* work section  */
-  .section-work-data .grid-four-col {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* services section  */
-  .section-services .grid-three-col {
-    grid-template-columns: 1fr;
+/* ##################################################################################################################### */
+@media (min-width: 1400px) {
+  /* Styles for very large devices */
+  .homepage-background {
+    background-size: cover;
+    height: 100vh;
+    padding-left: 30px;
   }
 }
 
@@ -494,6 +472,7 @@ h3 {
 .img-ovelay {
   position: relative;
   overflow: hidden;
+  display: flex;
 }
 
 .portfolio-images img {
