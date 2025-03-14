@@ -466,7 +466,7 @@ h3 {
 
 .portfolio-images {
   gap: 3.2rem;
-  margin-top: 6.4rem;
+  /* margin-top: 6.4rem; */
 }
 
 .img-ovelay {
@@ -918,4 +918,7 @@ button[type="submit"]:hover {
 }
 .hero-banner-h1 {
   color: white;
+}
+.button-link {
+  padding: 30px;
 }
